@@ -1,9 +1,9 @@
-package com.example.calendarappsimbersoft.recycler
+package com.example.calendarappsimbersoft.presentation.calendar.recycler
 
 import androidx.recyclerview.widget.RecyclerView
-import com.example.calendarappsimbersoft.recycler.base.BaseAdapter
-import com.example.calendarappsimbersoft.recycler.base.Recycler
-import com.example.calendarappsimbersoft.recycler.base.ViewTyped
+import com.example.calendarappsimbersoft.presentation.calendar.recycler.base.BaseAdapter
+import com.example.calendarappsimbersoft.presentation.calendar.recycler.base.Recycler
+import com.example.calendarappsimbersoft.presentation.calendar.recycler.base.ViewTyped
 import io.reactivex.rxjava3.core.Observable
 
 internal class RecyclerImpl<T : ViewTyped>(

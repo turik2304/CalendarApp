@@ -1,9 +1,9 @@
 package com.example.calendarappsimbersoft
 
 import com.applandeo.materialcalendarview.EventDay
-import com.example.calendarappsimbersoft.recycler.base.ViewTyped
-import com.example.calendarappsimbersoft.recycler.items.EmptyEventDayUI
-import com.example.calendarappsimbersoft.recycler.items.EventDayUI
+import com.example.calendarappsimbersoft.presentation.calendar.recycler.base.ViewTyped
+import com.example.calendarappsimbersoft.presentation.calendar.recycler.items.EmptyEventDayUI
+import com.example.calendarappsimbersoft.presentation.calendar.recycler.items.EventDayUI
 import java.text.SimpleDateFormat
 import java.util.*
 

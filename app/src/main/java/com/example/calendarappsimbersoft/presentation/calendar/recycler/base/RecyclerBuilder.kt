@@ -1,4 +1,4 @@
-package com.example.calendarappsimbersoft.recycler.base
+package com.example.calendarappsimbersoft.presentation.calendar.recycler.base
 
 import androidx.recyclerview.widget.RecyclerView
 

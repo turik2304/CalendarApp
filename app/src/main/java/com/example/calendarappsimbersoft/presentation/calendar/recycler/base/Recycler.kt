@@ -1,8 +1,8 @@
-package com.example.calendarappsimbersoft.recycler.base
+package com.example.calendarappsimbersoft.presentation.calendar.recycler.base
 
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.example.calendarappsimbersoft.recycler.RecyclerBuilderImpl
+import com.example.calendarappsimbersoft.presentation.calendar.recycler.RecyclerBuilderImpl
 import io.reactivex.rxjava3.core.Observable
 
 interface Recycler<T : ViewTyped> {

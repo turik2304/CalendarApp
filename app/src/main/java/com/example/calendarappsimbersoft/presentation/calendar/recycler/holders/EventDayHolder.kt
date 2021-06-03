@@ -1,11 +1,11 @@
-package com.example.calendarappsimbersoft.recycler.holders
+package com.example.calendarappsimbersoft.presentation.calendar.recycler.holders
 
 import android.view.View
 import android.widget.TextView
 import com.example.calendarappsimbersoft.R
-import com.example.calendarappsimbersoft.recycler.base.BaseViewHolder
-import com.example.calendarappsimbersoft.recycler.base.RecyclerItemClicksObservable
-import com.example.calendarappsimbersoft.recycler.items.EventDayUI
+import com.example.calendarappsimbersoft.presentation.calendar.recycler.base.BaseViewHolder
+import com.example.calendarappsimbersoft.presentation.calendar.recycler.base.RecyclerItemClicksObservable
+import com.example.calendarappsimbersoft.presentation.calendar.recycler.items.EventDayUI
 
 data class EventDayHolder(
     val view: View,

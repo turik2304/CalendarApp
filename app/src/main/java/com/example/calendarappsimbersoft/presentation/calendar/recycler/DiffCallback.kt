@@ -1,8 +1,8 @@
-package com.example.calendarappsimbersoft.recycler
+package com.example.calendarappsimbersoft.presentation.calendar.recycler
 
 import android.annotation.SuppressLint
 import androidx.recyclerview.widget.DiffUtil
-import com.example.calendarappsimbersoft.recycler.base.ViewTyped
+import com.example.calendarappsimbersoft.presentation.calendar.recycler.base.ViewTyped
 
 class DiffCallback<T : ViewTyped> : DiffUtil.ItemCallback<T>() {
 

@@ -1,8 +1,8 @@
-package com.example.calendarappsimbersoft.recycler
+package com.example.calendarappsimbersoft.presentation.calendar.recycler
 
-import com.example.calendarappsimbersoft.recycler.base.BaseAdapter
-import com.example.calendarappsimbersoft.recycler.base.HolderFactory
-import com.example.calendarappsimbersoft.recycler.base.ViewTyped
+import com.example.calendarappsimbersoft.presentation.calendar.recycler.base.BaseAdapter
+import com.example.calendarappsimbersoft.presentation.calendar.recycler.base.HolderFactory
+import com.example.calendarappsimbersoft.presentation.calendar.recycler.base.ViewTyped
 
 class Adapter<T : ViewTyped>(holderFactory: HolderFactory) :
     BaseAdapter<T>(holderFactory) {

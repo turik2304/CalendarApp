@@ -1,9 +1,9 @@
-package com.example.calendarappsimbersoft.recycler
+package com.example.calendarappsimbersoft.presentation.calendar.recycler
 
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.calendarappsimbersoft.recycler.base.*
+import com.example.calendarappsimbersoft.presentation.calendar.recycler.base.*
 
 class RecyclerBuilderImpl<T : ViewTyped>(
     override val adapter: BaseAdapter<T>

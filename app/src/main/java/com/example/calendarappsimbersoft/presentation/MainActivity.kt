@@ -1,16 +1,16 @@
-package com.example.calendarappsimbersoft
+package com.example.calendarappsimbersoft.presentation
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.applandeo.materialcalendarview.EventDay
+import com.example.calendarappsimbersoft.Presenter
 import com.example.calendarappsimbersoft.databinding.ActivityMainBinding
-import com.example.calendarappsimbersoft.recycler.DiffCallback
-import com.example.calendarappsimbersoft.recycler.HolderFactoryImpl
-import com.example.calendarappsimbersoft.recycler.base.Recycler
-import com.example.calendarappsimbersoft.recycler.base.ViewTyped
-import com.example.calendarappsimbersoft.recycler.items.EventDayUI
+import com.example.calendarappsimbersoft.presentation.calendar.recycler.DiffCallback
+import com.example.calendarappsimbersoft.presentation.calendar.recycler.HolderFactoryImpl
+import com.example.calendarappsimbersoft.presentation.calendar.recycler.base.Recycler
+import com.example.calendarappsimbersoft.presentation.calendar.recycler.base.ViewTyped
 import java.util.*
 
 class MainActivity : AppCompatActivity() {

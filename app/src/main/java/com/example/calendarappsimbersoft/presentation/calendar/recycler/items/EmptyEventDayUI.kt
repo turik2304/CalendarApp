@@ -1,7 +1,7 @@
-package com.example.calendarappsimbersoft.recycler.items
+package com.example.calendarappsimbersoft.presentation.calendar.recycler.items
 
 import com.example.calendarappsimbersoft.R
-import com.example.calendarappsimbersoft.recycler.base.ViewTyped
+import com.example.calendarappsimbersoft.presentation.calendar.recycler.base.ViewTyped
 
 data class EmptyEventDayUI(
     override val uid: Int,
