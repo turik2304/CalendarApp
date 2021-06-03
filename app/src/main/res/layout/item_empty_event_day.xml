@@ -8,16 +8,7 @@
         android:id="@+id/tvEventName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Name"
-        android:paddingLeft="20dp"
+        android:gravity="center"
+        android:hint="Нет событий"
         android:textSize="22sp" />
-
-    <TextView
-        android:id="@+id/tvTimeRange"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="14:00-15:00"
-        android:paddingLeft="20dp"
-        android:textSize="18sp">
-    </TextView>
 </LinearLayout>
