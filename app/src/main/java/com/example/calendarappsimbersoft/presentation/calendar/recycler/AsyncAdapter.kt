@@ -19,13 +19,4 @@ class AsyncAdapter<T : ViewTyped>(
         set(newItems) {
             localItems.submitList(newItems)
         }
-
-    fun setItemsWithCommitCallback(
-        newItems: List<T>,
-        runnable: Runnable
-    ) {
-        localItems.submitList(newItems) {
-            runnable.run()
-        }
-    }
 }

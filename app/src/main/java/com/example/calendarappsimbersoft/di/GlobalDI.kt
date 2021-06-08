@@ -1,14 +1,18 @@
 package com.example.calendarappsimbersoft.di
 
 import android.content.Context
-import android.util.Log
+import com.example.calendarappsimbersoft.domain.LoadEventsMiddleware
 import com.example.calendarappsimbersoft.presentation.calendar.CalendarPresenter
 
 class GlobalDI private constructor(
     applicationContext: Context
 ) {
 
-    val presenter by lazy(::CalendarPresenter)
+    private val loadEventsMiddleware by lazy { LoadEventsMiddleware() }
+
+    val presenter by lazy {
+        CalendarPresenter(loadEventsMiddleware)
+    }
 
     companion object {
         lateinit var INSTANCE: GlobalDI
