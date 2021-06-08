@@ -1,13 +1,17 @@
-package com.example.calendarappsimbersoft
+package com.example.calendarappsimbersoft.presentation.calendar
 
+import android.util.Log
 import com.applandeo.materialcalendarview.EventDay
+import com.example.calendarappsimbersoft.R
+import com.example.calendarappsimbersoft.data.Event
+import com.example.calendarappsimbersoft.presentation.base.presenter.BasePresenter
 import com.example.calendarappsimbersoft.presentation.calendar.recycler.base.ViewTyped
 import com.example.calendarappsimbersoft.presentation.calendar.recycler.items.EmptyEventDayUI
 import com.example.calendarappsimbersoft.presentation.calendar.recycler.items.EventDayUI
 import java.text.SimpleDateFormat
 import java.util.*
 
-class Presenter {
+class CalendarPresenter : BasePresenter<CalendarView>(CalendarView::class.java) {
 
     companion object {
         private const val HOUR_IN_MILLIS = 60L * 60L * 1000L
@@ -53,7 +57,16 @@ class Presenter {
     )
     private val drawable = R.drawable.ic_circle
 
-    fun getEvents(): List<EventDay> {
+    fun loadCalendarEvents() {
+        Log.d("xxx", "loadCalendarEvents")
+        view?.showCalendarEvents(getEventsDOMAIN())
+    }
+
+    fun loadEventListByDate(dateInMillis: Long) {
+        view?.showEventsByDate(getEventsByDateDOMAIN(dateInMillis))
+    }
+
+    private fun getEventsDOMAIN(): List<EventDay> {
         return events.map {
             val calendar = GregorianCalendar()
             calendar.timeInMillis = it.startDate
@@ -61,17 +74,21 @@ class Presenter {
         }
     }
 
-    fun getEventsByDate(timeInMillis: Long): List<ViewTyped> {
+    private fun getEventsByDateDOMAIN(timeInMillis: Long): List<ViewTyped> {
         val formatterForComparisons = SimpleDateFormat("dd MM yyyy")
         val timeRangeFormatter = SimpleDateFormat("HH:mm")
         val events = events.filter {
-            formatterForComparisons.format(it.startDate) == formatterForComparisons.format(timeInMillis)
+            formatterForComparisons.format(it.startDate) == formatterForComparisons.format(
+                timeInMillis
+            )
         }
             .map {
                 EventDayUI(
                     name = it.name,
                     description = it.description,
-                    timeRange = timeRangeFormatter.format(it.startDate) + "-" + timeRangeFormatter.format(it.endDate),
+                    timeRange = timeRangeFormatter.format(it.startDate) + "-" + timeRangeFormatter.format(
+                        it.endDate
+                    ),
                     uid = it.id
                 )
             }

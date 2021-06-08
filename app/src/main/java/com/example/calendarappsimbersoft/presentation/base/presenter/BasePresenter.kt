@@ -1,6 +1,6 @@
 package com.example.calendarappsimbersoft.presentation.base.presenter
 
-import android.view.ViewStub
+import androidx.annotation.CallSuper
 
 abstract class BasePresenter<View> protected constructor(
     viewClass: Class<View>
@@ -8,10 +8,12 @@ abstract class BasePresenter<View> protected constructor(
 
     var view: View? = null
 
+    @CallSuper
     override fun attachView(view: View) {
         this.view = view
     }
 
+    @CallSuper
     override fun detachView(isFinishing: Boolean) {
         if (isFinishing) {
             view = null

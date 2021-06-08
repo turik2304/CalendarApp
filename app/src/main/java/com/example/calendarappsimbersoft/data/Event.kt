@@ -1,4 +1,4 @@
-package com.example.calendarappsimbersoft
+package com.example.calendarappsimbersoft.data
 
 
 class Event(
