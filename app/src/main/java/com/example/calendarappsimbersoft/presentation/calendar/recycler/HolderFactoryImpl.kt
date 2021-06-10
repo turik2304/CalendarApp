@@ -7,10 +7,10 @@ import com.example.calendarappsimbersoft.presentation.calendar.recycler.base.Hol
 import com.example.calendarappsimbersoft.presentation.calendar.recycler.holders.EventDayHolder
 import com.example.calendarappsimbersoft.presentation.calendar.recycler.items.EmptyEventDayUI
 
-class HolderFactoryImpl: HolderFactory() {
+class HolderFactoryImpl : HolderFactory() {
 
     override fun createViewHolder(view: View, viewType: Int): BaseViewHolder<*>? {
-        return when(viewType) {
+        return when (viewType) {
             R.layout.item_event_day -> EventDayHolder(view, clicks)
             R.layout.item_empty_event_day -> BaseViewHolder<EmptyEventDayUI>(view)
             else -> null
