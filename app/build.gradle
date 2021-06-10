@@ -50,4 +50,7 @@ dependencies {
     implementation "io.reactivex.rxjava3:rxjava:$rxJava"
     implementation "io.reactivex.rxjava3:rxandroid:$rxAndroid"
     implementation "com.jakewharton.rxrelay3:rxrelay:$rxJava"
+
+    def gson = "2.8.7"
+    implementation "com.google.code.gson:gson:$gson"
 }
