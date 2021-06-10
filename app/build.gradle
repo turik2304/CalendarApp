@@ -1,6 +1,8 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'realm-android'
 }
 
 android {
@@ -45,11 +47,12 @@ dependencies {
     def calendar = "1.7.0"
     implementation "com.applandeo:material-calendar-view:$calendar"
 
-    def rxJava = "3.0.0"
-    def rxAndroid = "3.0.0"
-    implementation "io.reactivex.rxjava3:rxjava:$rxJava"
-    implementation "io.reactivex.rxjava3:rxandroid:$rxAndroid"
-    implementation "com.jakewharton.rxrelay3:rxrelay:$rxJava"
+    def rxJava = "2.2.21"
+    def rxAndroid = "2.1.1"
+    def rxRelay= "2.0.0"
+    implementation "io.reactivex.rxjava2:rxjava:$rxJava"
+    implementation "io.reactivex.rxjava2:rxandroid:$rxAndroid"
+    implementation "com.jakewharton.rxrelay2:rxrelay:$rxRelay"
 
     def gson = "2.8.7"
     implementation "com.google.code.gson:gson:$gson"

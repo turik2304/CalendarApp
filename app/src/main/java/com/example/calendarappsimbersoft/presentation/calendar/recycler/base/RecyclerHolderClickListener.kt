@@ -2,10 +2,10 @@ package com.example.calendarappsimbersoft.presentation.calendar.recycler.base
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
-import com.jakewharton.rxrelay3.PublishRelay
-import io.reactivex.rxjava3.core.Observable
-import io.reactivex.rxjava3.core.Observer
-import io.reactivex.rxjava3.functions.Consumer
+import com.jakewharton.rxrelay2.PublishRelay
+import io.reactivex.Observable
+import io.reactivex.Observer
+import io.reactivex.functions.Consumer
 
 interface RecyclerHolderClickListener {
     fun accept(viewHolder: BaseViewHolder<*>, onClick: () -> Unit = {})

@@ -1,5 +1,9 @@
 package com.example.calendarappsimbersoft.data
 
+import io.reactivex.Observable
+import io.realm.Realm
+
 interface CalendarRepository {
-    fun getEvents(): List<Event>
+    val realm: Realm
+    fun getEvents(): Observable<List<Event>>
 }

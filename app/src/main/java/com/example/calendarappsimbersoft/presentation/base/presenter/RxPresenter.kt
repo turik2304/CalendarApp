@@ -1,13 +1,15 @@
 package com.example.calendarappsimbersoft.presentation.base.presenter
 
-import io.reactivex.rxjava3.disposables.CompositeDisposable
-import io.reactivex.rxjava3.disposables.Disposable
+import androidx.annotation.CallSuper
+import io.reactivex.disposables.CompositeDisposable
+import io.reactivex.disposables.Disposable
 
 abstract class RxPresenter<View> protected constructor(viewClass: Class<View>) :
     BasePresenter<View>(viewClass) {
 
-    protected val disposables = CompositeDisposable()
+    private val disposables = CompositeDisposable()
 
+    @CallSuper
     override fun detachView(isFinishing: Boolean) {
         if (isFinishing) {
             disposables.dispose()

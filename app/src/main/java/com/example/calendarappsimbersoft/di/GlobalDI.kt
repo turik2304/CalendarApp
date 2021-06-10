@@ -5,22 +5,18 @@ import com.example.calendarappsimbersoft.data.CalendarRepository
 import com.example.calendarappsimbersoft.data.CalendarRepositoryImpl
 import com.example.calendarappsimbersoft.domain.LoadEventsMiddleware
 import com.example.calendarappsimbersoft.domain.Middleware
-import com.example.calendarappsimbersoft.presentation.calendar.CalendarPresenter
-import com.example.calendarappsimbersoft.utils.AssetManager
-import com.example.calendarappsimbersoft.utils.AssetManagerImpl
+import com.example.calendarappsimbersoft.presentation.calendar.CalendarRxPresenter
 import com.example.calendarappsimbersoft.utils.DateUtils
 import com.example.calendarappsimbersoft.utils.DateUtilsImpl
+import io.realm.Realm
 
 class GlobalDI private constructor(
     private val applicationContext: Context
 ) {
-    private val assetManager: AssetManager by lazy { AssetManagerImpl() }
+    private val realm: Realm by lazy { Realm.getDefaultInstance() }
 
     private val repository: CalendarRepository by lazy {
-        CalendarRepositoryImpl(
-            applicationContext,
-            assetManager
-        )
+        CalendarRepositoryImpl(realm)
     }
 
     private val dateUtils: DateUtils by lazy { DateUtilsImpl() }
@@ -33,7 +29,7 @@ class GlobalDI private constructor(
     }
 
     val presenter by lazy {
-        CalendarPresenter(loadEventsMiddleware)
+        CalendarRxPresenter(loadEventsMiddleware)
     }
 
     companion object {

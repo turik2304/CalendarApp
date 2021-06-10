@@ -21,5 +21,4 @@ abstract class MvpActivity<View, P : Presenter<View>> : AppCompatActivity(),
         mvpHelper.destroy(isFinishing)
         super.onDestroy()
     }
-
 }

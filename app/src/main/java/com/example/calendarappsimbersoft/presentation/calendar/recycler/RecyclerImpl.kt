@@ -4,7 +4,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.calendarappsimbersoft.presentation.calendar.recycler.base.BaseAdapter
 import com.example.calendarappsimbersoft.presentation.calendar.recycler.base.Recycler
 import com.example.calendarappsimbersoft.presentation.calendar.recycler.base.ViewTyped
-import io.reactivex.rxjava3.core.Observable
+import io.reactivex.Observable
 
 internal class RecyclerImpl<T : ViewTyped>(
     override val recyclerView: RecyclerView,
