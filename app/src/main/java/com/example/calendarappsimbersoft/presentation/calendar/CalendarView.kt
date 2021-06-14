@@ -7,5 +7,4 @@ interface CalendarView {
     fun showLoading()
     fun showCalendarEvents(calendarEvents: List<EventDay>)
     fun showEventsByDate(recyclerEvents: List<ViewTyped>)
-    fun showEmptyEvent()
 }

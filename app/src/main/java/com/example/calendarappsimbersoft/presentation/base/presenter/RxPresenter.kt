@@ -1,6 +1,7 @@
 package com.example.calendarappsimbersoft.presentation.base.presenter
 
 import androidx.annotation.CallSuper
+import com.example.calendarappsimbersoft.extensions.plusAssign
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
 
@@ -20,9 +21,5 @@ abstract class RxPresenter<View> protected constructor(viewClass: Class<View>) :
     protected fun Disposable.disposeOnFinish(): Disposable {
         disposables += this
         return this
-    }
-
-    private operator fun CompositeDisposable.plusAssign(disposable: Disposable) {
-        add(disposable)
     }
 }

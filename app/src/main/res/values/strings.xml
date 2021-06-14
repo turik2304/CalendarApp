@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">CalendarAppSimberSoft</string>
+    <string name="name_hint">Название</string>
+    <string name="description_hint">Описание</string>
+    <string name="start_time_hint">Начало</string>
+    <string name="start_time_value">12:00</string>
+    <string name="end_time_hint">Конец</string>
+    <string name="end_time_value">12:00</string>
+    <string name="cancel_hint">Отменить</string>
+    <string name="create_event_hint">Создать событие</string>
+    <string name="time_range_hint">14:00–15:00</string>
+    <string name="time_info">%1$d:%2$d</string>
+    <string name="time_hint">Время</string>
+    <string name="check_time_message">Проверьте время!</string>
 </resources>

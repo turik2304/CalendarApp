@@ -15,7 +15,12 @@ class CalendarRepositoryImpl(
             .asFlowable()
             .toObservable()
             .observeOn(Schedulers.computation())
-            .filter { it.isNotEmpty() }
             .map { it.toList() }
+    }
+
+    override fun addEvent(event: Event) {
+        realm.executeTransactionAsync { transaction ->
+            transaction.insertOrUpdate(event)
+        }
     }
 }

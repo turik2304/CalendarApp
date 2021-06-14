@@ -3,17 +3,26 @@ package com.example.calendarappsimbersoft.di
 import android.content.Context
 import com.example.calendarappsimbersoft.data.CalendarRepository
 import com.example.calendarappsimbersoft.data.CalendarRepositoryImpl
-import com.example.calendarappsimbersoft.domain.LoadEventsMiddleware
+import com.example.calendarappsimbersoft.domain.EventsMiddleware
 import com.example.calendarappsimbersoft.domain.Middleware
 import com.example.calendarappsimbersoft.presentation.calendar.CalendarRxPresenter
 import com.example.calendarappsimbersoft.utils.DateUtils
 import com.example.calendarappsimbersoft.utils.DateUtilsImpl
 import io.realm.Realm
+import io.realm.RealmConfiguration
 
 class GlobalDI private constructor(
     private val applicationContext: Context
 ) {
-    private val realm: Realm by lazy { Realm.getDefaultInstance() }
+    private val realm: Realm by lazy {
+        Realm.init(applicationContext)
+        val config = RealmConfiguration.Builder()
+            .deleteRealmIfMigrationNeeded()
+            .name("CalendarAppDatabase")
+            .build()
+        Realm.setDefaultConfiguration(config)
+        Realm.getDefaultInstance()
+    }
 
     private val repository: CalendarRepository by lazy {
         CalendarRepositoryImpl(realm)
@@ -21,15 +30,15 @@ class GlobalDI private constructor(
 
     private val dateUtils: DateUtils by lazy { DateUtilsImpl() }
 
-    private val loadEventsMiddleware: Middleware by lazy {
-        LoadEventsMiddleware(
+    private val eventsMiddleware: Middleware by lazy {
+        EventsMiddleware(
             repository,
             dateUtils
         )
     }
 
     val presenter by lazy {
-        CalendarRxPresenter(loadEventsMiddleware)
+        CalendarRxPresenter(eventsMiddleware)
     }
 
     companion object {
