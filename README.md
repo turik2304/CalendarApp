@@ -1,5 +1,5 @@
 # CalendarApp
-Тестовое задание на Летний интенсив SimberSoft
+Тестовое задание на Летний интенсив SimbirSoft
 
 Branch Level_2 - Уровень 2
 
